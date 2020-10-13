@@ -51,10 +51,9 @@ class Train:
                     new_v = r + laby_mdp.gamma * self.v[s]
                     delta += abs(self.v[state] - new_v)
                     self.v[state] = new_v
-
+            print(self.v)
             # 收敛就退出评估
             if (delta < 1e-6):
-                print(" *done ")
                 break
 
     def policy_improve(self, laby_mdp):
